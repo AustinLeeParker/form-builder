@@ -85,16 +85,25 @@ let formData = [
 // HINTS:
 // As you can see, we access the first element in the array
 // with [0] and then grab the property "label" using the "." operator
-( function(){
+(function () {
   // Select the first element from the array
-  let first = formData[ 0 ];
+  let first = formData[0];
   // Log the first object
-  console.log( first );
+  console.log(first);
   // Log the string "First Name"
-  console.log( first.label );
-} )();
+  console.log(first.label);
+})();
 
 
 // -------- Your Code Goes Below this Line --------
-
-
+let container = document.querySelector("#fields");
+function addInput(type, label, id, icon, options) {
+  let input = document.createElement("input");
+  let input = document.setAttribute("type", type);
+  let input = document.setAttribute("label", label);
+  let input = document.setAttribute("id", id);
+  let input = document.setAttribute("icon", icon);
+  let input = document.setAttribute("options", options);
+  container.appendChild(input);
+}
+input = 
