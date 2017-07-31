@@ -98,12 +98,18 @@ let formData = [
 // -------- Your Code Goes Below this Line --------
 let container = document.querySelector("#fields");
 function addInput(type, label, id, icon, options) {
-  let input = document.createElement("input");
-  let input = document.setAttribute("type", type);
-  let input = document.setAttribute("label", label);
-  let input = document.setAttribute("id", id);
-  let input = document.setAttribute("icon", icon);
-  let input = document.setAttribute("options", options);
-  container.appendChild(input);
+  let input1 = document.createElement("input");
+  input1.setAttribute("type", type);
+  input1.setAttribute("placeholder", label);
+  input1.setAttribute("id", id);
+  input1.setAttribute("icon", icon);
+  input1.setAttribute("options", options);
+  container.appendChild(input1);
 }
-input = 
+input6 = addInput("text", "First Name", "user-first-name", "fa-user", "[]");
+input2 = addInput("text", "Last Name", "user-last-name", "fa-user", "[]");
+input3 = addInput("email", "Email Address", "user-email", "fa-envelope", "[]");
+input4 = addInput("text", "Current Website URL", "user-webiste", "fa-globe", "[]");
+input5 = addInput("select", "Select Language", "user-language", "[]", "{}");
+
+for (let i = 0; i < formData.length; i++)
