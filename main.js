@@ -111,5 +111,8 @@ input2 = addInput("text", "Last Name", "user-last-name", "fa-user", "[]");
 input3 = addInput("email", "Email Address", "user-email", "fa-envelope", "[]");
 input4 = addInput("text", "Current Website URL", "user-webiste", "fa-globe", "[]");
 input5 = addInput("select", "Select Language", "user-language", "[]", "{}");
+input7 = addInput("comment", "Your comment", "user-comment", "[]", "{}");
+input8 = addInput("mobile", "Mobile Number", "user-mobile", "[]", "{}");
+input9 = addInput("home", "Home Number", "user-home", "[]", "{}");
+// for (let i = 0; i < formData.length; i++)
 
-for (let i = 0; i < formData.length; i++)
