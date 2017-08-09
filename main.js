@@ -96,23 +96,42 @@ let formData = [
 
 
 // -------- Your Code Goes Below this Line --------
+let new_font = document.querySelector("head");
+let link = document.createElement("link");
+link.setAttribute("href", "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+new_font.appendChild(link);
 let container = document.querySelector("#fields");
-function addInput(type, label, id, icon, options) {
-  let input1 = document.createElement("input");
-  input1.setAttribute("type", type);
-  input1.setAttribute("placeholder", label);
-  input1.setAttribute("id", id);
-  input1.setAttribute("icon", icon);
-  input1.setAttribute("options", options);
-  container.appendChild(input1);
-}
-input6 = addInput("text", "First Name", "user-first-name", "fa-user", "[]");
-input2 = addInput("text", "Last Name", "user-last-name", "fa-user", "[]");
-input3 = addInput("email", "Email Address", "user-email", "fa-envelope", "[]");
-input4 = addInput("text", "Current Website URL", "user-webiste", "fa-globe", "[]");
-input5 = addInput("select", "Select Language", "user-language", "[]", "{}");
-input7 = addInput("comment", "Your comment", "user-comment", "[]", "{}");
-input8 = addInput("mobile", "Mobile Number", "user-mobile", "[]", "{}");
-input9 = addInput("home", "Home Number", "user-home", "[]", "{}");
-// for (let i = 0; i < formData.length; i++)
+for (let i = 0; i < formData.length; i++) {
+  if (formData[i].type === "select") {
+    let input2 = document.createElement("select");
 
+    for (let x = 0; x < formData[i].options.length; x++) {
+      options = document.createElement("option");
+      options.setAttribute("label", formData[i].options[x].label);
+      options.setAttribute("value", formData[i].options[x].value);
+      input2.appendChild(options);
+      input2.style.width = "520px";
+      container.appendChild(input2);
+    }
+  }
+  else if (formData[i].type === "textarea") {
+    let input1 = document.createElement("textarea");
+    input1.setAttribute("type", formData[i].type);
+    input1.setAttribute("placeholder", formData[i].label);
+    input1.setAttribute("id", formData[i].id);
+    input1.setAttribute("icon", formData[i].icon);
+    input1.setAttribute("options", formData[i].options);
+    input1.style.width = "486px";
+    container.appendChild(input1);
+  }
+  else {
+    let input1 = document.createElement("input");
+    input1.setAttribute("type", formData[i].type);
+    input1.setAttribute("placeholder", formData[i].label);
+    input1.setAttribute("id", formData[i].id);
+    input1.setAttribute("icon", formData[i].icon);
+    input1.setAttribute("options", formData[i].options);
+    container.appendChild(input1);
+  }
+
+}
